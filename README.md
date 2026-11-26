@@ -9,8 +9,8 @@ La guía completa del proyecto está en [PROYECTO.md](PROYECTO.md). Léanla ante
 | Integrante | Matrícula | Nombre | Usuario de GitHub | Clase |
 | --- | --- | --- | --- | --- |
 | 1 |25173 |Cesar Leonardo Garrido |clgarridog | |
-| 2 | | | | |
-| 3 | | | | |
+| 2 |25206 Alejandro Serrato de la Rosa Serraprogramador
+| 3 |
 | 4 | | | | |
 | 5 | | | | |
 | 6 (solo equipo de seis) | | | | |
@@ -98,19 +98,38 @@ Diagrama de clases de la solución completa, hecho en draw.io. Guarden la imagen
 Los resultados de los experimentos están en [docs/experimentos.md](docs/experimentos.md).
 
 ## 7. Prueba de extensibilidad
+La arquitectura del proyecto busca permitir la incorporación de nuevos dispositivos sin modificar el funcionamiento interno de CeldaInspeccion.
+Para agregar un dispositivo nuevo sería necesario:
 
+Crear un nuevo archivo de encabezado .h.
+
+Crear su implementación correspondiente .cpp.
+
+Heredar de la clase abstracta Dispositivo.
+
+Implementar los métodos virtuales inspeccionar() y descripcion() mediante override.
+
+Crear el objeto en main.cpp.
+
+Agregarlo a la celda mediante agregarDispositivo().
 Practiquen agregar un dispositivo nuevo antes de entregar.
 
 **¿Qué archivos tuvieron que crear o modificar? ¿Tuvieron que tocar `CeldaInspeccion`?**
-
-[Inserta aquí tu respuesta]
-
+De acuerdo con el diseño del proyecto, únicamente sería necesario crear los archivos correspondientes al nuevo dispositivo y modificar main.cpp para instanciarlo y agregarlo a la celda.
+No sería necesario modificar CeldaInspeccion, ya que esta trabaja con punteros de tipo Dispositivo* y utiliza polimorfismo para ejecutar las inspecciones.
+La prueba práctica de extensibilidad queda pendiente de realizar y documentar.
 ## 8. Reflexión del equipo
 
 **¿Qué aprendieron en este proyecto?**
 
-[Inserta aquí tu respuesta]
+Durante el desarrollo del proyecto aprendimos a aplicar los principales conceptos de la programación orientada a objetos mediante la simulación de un sistema de inspección industrial.
+Comprendimos la importancia de utilizar clases abstractas, herencia, polimorfismo y encapsulamiento para desarrollar programas organizados y escalables.
+También aprendimos a utilizar la herencia múltiple mediante la interfaz Calibrable, así como a diferenciar entre agregación y composición dentro de una arquitectura de software.
+Otro aprendizaje importante fue la implementación de contenedores de la biblioteca estándar de C++, como std::vector y std::map, para administrar dispositivos y registrar resultados.
+Finalmente, reforzamos nuestras habilidades de trabajo colaborativo mediante Git y GitHub, la organización de archivos .h y .cpp, y la documentación técnica del proyecto.
 
 **¿Qué cambiarían de su proceso de trabajo como equipo?**
 
-[Inserta aquí tu respuesta]
+Como equipo, mejoraríamos la distribución de actividades desde el inicio del proyecto, estableciendo responsabilidades claras para cada integrante.
+También dedicaríamos más tiempo a integrar y probar las clases antes de llegar a las últimas etapas del desarrollo, con el objetivo de detectar errores de compilación y funcionamiento oportunamente.
+Además, procuraríamos realizar commits más frecuentes, mantener una comunicación constante y revisar conjuntamente las implementaciones para asegurar que todas las clases cumplan con los contratos establecidos.
